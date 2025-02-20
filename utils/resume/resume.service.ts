@@ -1,6 +1,6 @@
 import { storage } from "wxt/storage";
-import { ResumeRequest } from "@/src/models/resume.request.ts";
-import {resumeSchema} from "@/src/models/resume.schema.ts";
+import { ResumeRequest } from "@/utils/models/resume.request.ts";
+import {resumeSchema} from "@/utils/models/resume.schema.ts";
 import { RESUME_STORAGE_KEY } from "@/utils/constants/local.storage.constants.ts";
 
 export async function createResume(data: ResumeRequest): Promise<ResumeRequest> {
