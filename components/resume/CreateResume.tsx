@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ResumeRequest } from '@/utils/models/resume.request';
+import { createResume } from "@/utils/resume/resume.service.ts";
 
 const CreateResume: React.FC = () => {
     const [basics, setBasics] = useState({
@@ -24,7 +25,6 @@ const CreateResume: React.FC = () => {
 
     const handleSave = (e: React.FormEvent) => {
         e.preventDefault();
-        // Create the resume request object.
         const resumeRequest: ResumeRequest = {
             basics: {
                 name: basics.name,
@@ -43,6 +43,7 @@ const CreateResume: React.FC = () => {
         };
 
         console.log('Saved Resume:', resumeRequest);
+        return createResume(resumeRequest);
     };
 
     return (
