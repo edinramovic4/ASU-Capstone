@@ -1,4 +1,3 @@
-// src/models/resume.schema.ts
 import { z } from "zod";
 
 export const resumeSchema = z.object({
