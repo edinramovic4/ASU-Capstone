@@ -15,15 +15,6 @@ export const resumeSchema = z.object({
                 region: z.string(),
             })
             .optional(),
-        profiles: z
-            .array(
-                z.object({
-                    network: z.string(),
-                    username: z.string(),
-                    url: z.string().url(),
-                })
-            )
-            .optional(),
     }),
     education: z
         .array(
@@ -68,15 +59,5 @@ export const resumeSchema = z.object({
                 summary: z.string(),
             })
         )
-        .optional(),
-    awards: z
-        .array(
-            z.object({
-                title: z.string(),
-                date: z.coerce.date().optional(),
-                awarder: z.string().optional(),
-                summary: z.string().optional(),
-            })
-        )
-        .optional(),
+        .optional()
 });

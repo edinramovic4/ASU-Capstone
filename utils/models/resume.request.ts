@@ -12,11 +12,6 @@ export interface ResumeRequest {
             countryCode: string;
             region: string;
         };
-        profiles?: Array<{
-            network: string;
-            username: string;
-            url: string;
-        }>;
     };
     education?: Array<{
         institution: string;
@@ -45,11 +40,5 @@ export interface ResumeRequest {
         startDate: Date;
         endDate: Date;
         summary: string;
-    }>;
-    awards?: Array<{
-        title: string;
-        date?: Date;
-        awarder?: string;
-        summary?: string;
     }>;
 }

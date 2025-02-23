@@ -6,7 +6,8 @@ import { RESUME_STORAGE_KEY } from "@/utils/constants/local.storage.constants.ts
 export async function createResume(data: ResumeRequest): Promise<ResumeRequest> {
     const validatedResume = resumeSchema.parse(data);
     const resumes = await getResumes();
-    await storage.set(RESUME_STORAGE_KEY, [...resumes, validatedResume]); // TO-DO: Check whether to overwrite latest or keep all resumes
+    // TO-DO: Check whether to overwrite latest or keep all resumes
+    await storage.setItem(RESUME_STORAGE_KEY, [...resumes, validatedResume]);
     return validatedResume; // TO-DO: Check whether to return here or not (leave for testing)
 }
 
