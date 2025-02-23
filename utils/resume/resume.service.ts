@@ -15,4 +15,12 @@ export async function getResumes(): Promise<ResumeRequest[]> {
     return (await storage.getItem(RESUME_STORAGE_KEY)) || [];
 }
 
+export async function getLatestResume(): Promise<ResumeRequest | null> {
+    const resumes = await getResumes();
+    if (Array.isArray(resumes) && resumes.length > 0) {
+        return resumes[resumes.length - 1];
+    }
+    return null;
+}
+
 // TO-DO: Add other methods below (update, export, etc.)
