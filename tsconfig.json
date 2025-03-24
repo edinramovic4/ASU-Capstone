@@ -3,6 +3,12 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
-    "strict": true // Added per Zod documentation (resume validation)
+    "strict": true, // Added per Zod documentation (resume validation)
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   }
 }
